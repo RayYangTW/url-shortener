@@ -1,8 +1,9 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
-
 require('dotenv').config()
+
+const generateShortUrl = require('./generateShortUrl')
 
 const app = express()
 const PORT = 3000
@@ -27,6 +28,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
+  const originalUrl = req.body
+  console.log(originalUrl)
   res.render('success')
 })
 
