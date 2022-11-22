@@ -33,7 +33,6 @@ router.post('/', (req, res) => {
 //動態路由，找到短網址的相對應原網址，並導向該網址
 router.get('/:shortUrl', (req, res) => {
   const shortUrl = `http://localhost:${PORT}/${req.params.shortUrl}`
-  console.log(shortUrl)
   Url.findOne({ shortUrl })
     .then(url => res.redirect(url.originalUrl))
     .catch(error => console.log(error))
