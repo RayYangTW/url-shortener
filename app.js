@@ -40,12 +40,12 @@ app.post('/', (req, res) => {
         const generateRandom = generateShortUrl()
         const shortUrl = `http://localhost:${PORT}/${generateRandom}`
         Url.create({ originalUrl, shortUrl })
-          .then(() => res.render('success', { shortUrl }))
+          .then(() => res.render('success', { shortUrl, originalUrl }))
           .catch(error => console.log(error))
       //當找到資料時回傳已建立好的資料，並導向成功頁面
       } else {
         const shortUrl = url.shortUrl
-        res.render('success', { shortUrl })
+        res.render('success', { shortUrl, originalUrl })
       }
     })
     .catch(error => console.log(error))
