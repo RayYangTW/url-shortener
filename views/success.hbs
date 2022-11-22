@@ -4,8 +4,8 @@
       <label for="urlInput" class="form-label mb-3 mt-3">URL Created!</label>
       <div class="input-group mb-3">
         <input type="url" class="form-control" placeholder="http://" aria-label="Recipient's username"
-          aria-describedby="button-addon2" name="shortUrl" id="copy-url" value="{{this.shortUrl}}" >
-        <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="copyByClick()">Copy</button>
+          aria-describedby="button-addon2" name="shortUrl" id="copy-url" value="{{this.shortUrl}}" readonly>
+        <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="copyByClick()">Copy <i class="fa-solid fa-clone"></i></button>
         <a class="btn btn-outline-success" href="{{this.originalUrl}}">Go</a>
       </div>
       <a class="btn btn-info" href="/">Back</a>
